@@ -18,6 +18,6 @@ def gen_db(debug):
         return {
             "default": {
                 "ENGINE": config("ENGINE"),
-                "DATABASE_URL": config("DATABASE_URL"),
+                **dj_database_url.parse(config("DATABASE_URL")),
             }
         }
